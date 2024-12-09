@@ -1,14 +1,10 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+use calimero_sdk::app;
+use calimero_sdk::borsh::{BorshDeserialize, BorshSerialize};
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+#[app::state]
+#[derive(Default, BorshSerialize, BorshDeserialize)]
+#[borsh(crate = "calimero_sdk::borsh")]
+struct KvStore {}
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+#[app::logic]
+impl KvStore {}
