@@ -8,6 +8,8 @@ crate-type = ["cdylib"]
 
 [dependencies]
 calimero-sdk = { git = "https://github.com/calimero-network/core" }
+# calimero-sdk.workspace = true
+calimero-storage.workspace = true
 
 [profile.app-release]
 inherits = "release"
